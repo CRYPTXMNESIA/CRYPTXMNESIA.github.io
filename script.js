@@ -14,6 +14,38 @@ document.addEventListener("DOMContentLoaded", function () {
     let progress = 0;
     let progressMessage = '';
 
+    if ('serviceWorker' in navigator) {
+        navigator.serviceWorker.register('/service-worker.js')
+            .then(function(registration) {
+                console.log('Service Worker registered with scope:', registration.scope);
+    
+                registration.onupdatefound = function() {
+                    const installingWorker = registration.installing;
+                    installingWorker.onstatechange = function() {
+                        if (installingWorker.state === 'installed') {
+                            if (navigator.serviceWorker.controller) {
+                                // New update available
+                                window.location.reload();
+                            }
+                        }
+                    };
+                };
+            }).catch(function(error) {
+                console.log('Service Worker registration failed:', error);
+            });
+    
+        navigator.serviceWorker.addEventListener('message', event => {
+            if (event.data.type === 'GET_DEVICE_INFO') {
+                event.ports[0].postMessage({
+                    width: window.screen.width,
+                    height: window.screen.height,
+                    ratio: window.devicePixelRatio,
+                    orientation: window.screen.width > window.screen.height ? 'landscape' : 'portrait'
+                });
+            }
+        });
+    }
+
     const getRandomCharacter = (characters, rng) => {
         const randomIndex = Math.floor(rng() * characters.length);
         return characters[randomIndex];
@@ -367,6 +399,8 @@ document.addEventListener("DOMContentLoaded", function () {
         setPasswordStatus(null);
         console.log('Password status reset due to offline status');
     });
+
+    
 
     console.log('%cDO NOT PASTE ANYTHING HERE!', 'font-size:40px;color:red;background-color:black;border:5px solid black;');
 });
