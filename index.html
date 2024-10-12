@@ -1,0 +1,161 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>eepy - Lightweight Shutdown and Restart Tool</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="styles.css">
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/qrious/4.0.2/qrious.min.js"></script>
+    <script>
+        function copyBitcoinAddress() {
+            const address = document.getElementById('bitcoin-address').innerText;
+            navigator.clipboard.writeText(address).then(() => {
+                const copyMessage = document.getElementById('copy-message');
+                copyMessage.innerText = 'Copied to clipboard!';
+                setTimeout(() => {
+                    copyMessage.innerText = 'Click to copy address';
+                }, 2000);
+            });
+        }
+
+        function generateQRCode() {
+            const qr = new QRious({
+                element: document.getElementById('qrcode'),
+                value: document.getElementById('bitcoin-address').innerText,
+                size: 150,
+                background: '#111',
+                foreground: '#fff'
+            });
+        }
+
+        window.onload = generateQRCode;
+
+        document.addEventListener('DOMContentLoaded', function() {
+            document.querySelector('.easter-egg').addEventListener('click', function() {
+                window.open('https://www.youtube.com/watch?v=nTXQ6-35e7o', '_blank');
+            });
+        });
+    </script>
+</head>
+<body>
+    <div class="wrapper">
+        <header>
+            <div class="container">
+                <h1>eepy</h1>
+                <p class="tagline">Minimalist System Shutdown & Restart Tool for Windows</p>
+            </div>
+        </header>
+
+        <main>
+            <section class="about-section">
+                <div class="container">
+                    <h2>About eepy</h2>
+                    <p>I used to work on this old laptop. As it got older, it really struggled to shut down or restart—probably because of bloat, or maybe just <em>Microsoft, I guess</em>. Every time I needed a quick restart, I'd either wait a fuck ton of time for no apparent reason or because of some update (with even more bloatware that nobody asked for). So, I decided I had to make something that fixes this problem. That's why I made <strong>eepy</strong>.</p>
+
+                    <p>Have you ever tried to shut down or restart your PC, only to get stuck waiting for updates? Annoying, right? With <strong>eepy</strong>, you can skip all that nonsense and instantly shut down or restart your computer—no surprises, no waiting.</p>
+                    
+                    <p>This tool is super lightweight—just 4.50KB—and it works offline. You don't need to install anything; just download and run it. Whether you're on an older version of Windows or the latest, eepy works smoothly and does exactly what you need.</p>                    
+                </div>
+            </section>
+
+            <section class="download-section">
+                <div class="container">
+                    <h2>Download eepy</h2>
+                    <div class="download-button">
+                        <a href="download/eepy-v1.0.exe" download>Download eepy v1.0 (4.50KB)</a>
+                    </div>
+                    <p class="version-info">Version: 1.0.0 | Size: 4.50KB | Updated: October 11, 2024</p>
+                    <p class="note">No installation needed. Works on both 32-bit and 64-bit Windows systems.</p>
+                </div>
+            </section>
+
+            <section class="features-section">
+                <div class="container">
+                    <h2>Why Use eepy?</h2>
+                    <div class="features-grid">
+                        <div class="feature">
+                            <h3>Instant Shutdown or Restart</h3>
+                            <p>No delays, no “please wait...” screen—just a quick shutdown or reboot.</p>
+                        </div>
+                        <div class="feature">
+                            <h3>Super Lightweight</h3>
+                            <p>At only 4.50 KB, it's tiny and requires no installation—just run and go.</p>
+                        </div>
+                        <div class="feature">
+                            <h3>No Bloat</h3>
+                            <p>Contains no unnecessary features, unlike Microsoft products.</p>
+                        </div>
+                        <div class="feature">
+                            <h3>Offline & Secure</h3>
+                            <p>Works offline—no need for the internet. Nothing is collected or tracked—ever.</p>
+                        </div>
+                        <div class="feature">
+                            <h3>Dark Mode Friendly</h3>
+                            <p>Supports Windows dark mode, keeping your system looking sleek.</p>
+                        </div>
+                        <div class="feature">
+                            <h3>Compatible with All Windows Versions</h3>
+                            <p>Runs smoothly on all versions from Windows XP to Windows 11, supporting both 32-bit and 64-bit systems.</p>
+                        </div>
+                    </div>
+                </div>
+            </section>            
+
+            <section class="security-section">
+                <div class="container">
+                    <h2>Security & VirusTotal Report</h2>
+                    <p>eepy is 100% safe and secure. No malware, no adware—just a simple tool. Because it's so small and compressed, some antivirus programs might flag it as suspicious. These are <strong>false positives</strong> due to the lack of a digital signature, which can be expensive.</p>
+                    <p>You can verify this by checking the official <a href="https://www.virustotal.com/gui/file/f590b993b74f803bcad225b840195fb92b6d8f8eaabcfb1df8337b9e2f7d1e4a" target="_blank">VirusTotal report</a>.</p>
+                    <div class="virustotal-button">
+                        <a href="https://www.virustotal.com/gui/file/f590b993b74f803bcad225b840195fb92b6d8f8eaabcfb1df8337b9e2f7d1e4a" target="_blank">VirusTotal Report</a>
+                    </div>
+                    <p><strong>Note:</strong> The lack of a digital signature may cause a warning when you open the program, but it's completely safe.</p>
+                </div>
+            </section>
+
+            <section class="about-section">
+                <div class="container">
+                    <h2>Why eepy Isn't Open Source</h2>
+                    <p>eepy isn't open source for a few reasons. First, I'm a bit insecure about my coding skills, but more importantly, I'm worried that people might misuse the code, claim they made it, or even alter it in ways that could cause harm. It's a personal project, and I want to keep it simple and safe.</p>
+                    <p>I understand if you're concerned about closed-source software. I've been a victim of malware myself, so I know the feeling. But I promise, I have no <span class="easter-egg">ulterior motives</span>. I built eepy to help people, nothing more.</p>
+                </div>
+            </section>                      
+
+            <section class="compatibility-section">
+                <div class="container">
+                    <h2>System Compatibility</h2>
+                    <p>eepy is compatible with the following Windows versions:</p>
+                    <ul class="compatibility-list">
+                        <li>Windows XP</li>
+                        <li>Windows Vista</li>
+                        <li>Windows 7</li>
+                        <li>Windows 8 / 8.1</li>
+                        <li>Windows 10</li>
+                        <li>Windows 11</li>
+                    </ul>
+                </div>
+            </section>
+
+            <section class="donation-section">
+                <div class="container">
+                    <h2>Support the Project</h2>
+                    <p>All donations will go directly into funding the domain, this website, certificates, research, advertisement, and charity. If you'd like to contribute, you can do so via Bitcoin:</p>
+                    <div class="bitcoin-container" onclick="copyBitcoinAddress()">
+                        <canvas id="qrcode"></canvas>
+                        <p id="bitcoin-address"><strong>bc1qeq2a4mfqse42nvyv5jf6eu7fr4yds4xrpdyp7</strong></p>
+                    </div>
+                    <p id="copy-message" style="color: gray;">Click to copy address</p>
+                    <p>Every bit of support is appreciated—thank you so much!</p>
+                </div>
+            </section>
+        </main>
+
+        <footer>
+            <div class="container">
+                <p>made with &lt;3 by @cryptxmnesia</p>
+                <p>&copy; 2024 eepy. All rights reserved. No data is collected or tracked.</p>
+            </div>
+        </footer>
+    </div>
+</body>
+</html>

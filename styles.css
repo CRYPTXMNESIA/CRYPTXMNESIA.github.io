@@ -1,0 +1,295 @@
+/* Global Reset */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+/* Import Fixedsys font */
+@font-face {
+    font-family: 'Fixedsys';
+    src: url('fonts/fixedsys.ttf') format('truetype');
+}
+
+/* Body styling */
+body {
+    font-family: 'Fixedsys', monospace;
+    background-color: #000;
+    color: #fff;
+    line-height: 1.6;
+}
+
+/* Wrapper for the entire layout */
+.wrapper {
+    display: flex;
+    flex-direction: column;
+    min-height: 100vh;
+}
+
+/* Container for sections */
+.container {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 20px;
+}
+
+/* Header section */
+header {
+    background-color: #111;
+    padding: 30px 0;
+    text-align: center;
+    border-bottom: 2px solid #fff;
+}
+
+header h1 {
+    font-size: 3em;
+}
+
+header .tagline {
+    font-size: 1.2em;
+    color: #ccc;
+}
+
+/* About section */
+.about-section {
+    padding: 50px 0;
+    border-bottom: 2px solid #fff;
+}
+
+.about-section h2 {
+    font-size: 2.5em;
+    margin-bottom: 30px;
+}
+
+.about-section p {
+    margin-bottom: 20px;
+    font-size: 1.1em;
+}
+
+/* Download section */
+.download-section {
+    background-color: #111;
+    padding: 50px 0;
+    text-align: center;
+    border-bottom: 2px solid #fff;
+}
+
+.download-section h2 {
+    font-size: 2.5em;
+    margin-bottom: 30px;
+}
+
+.download-button a {
+    display: inline-block;
+    padding: 15px 30px;
+    font-size: 1.2em;
+    background-color: #fff;
+    color: #000;
+    text-decoration: none;
+    border: 2px solid #fff;
+    transition: background-color 0.3s ease;
+}
+
+.download-button a:hover {
+    background-color: #000;
+    color: #fff;
+    border-color: #fff;
+}
+
+.version-info, .note {
+    color: #ccc;
+    margin-top: 10px;
+    font-size: 0.9em;
+}
+
+/* Features section */
+.features-section {
+    padding: 50px 0;
+    text-align: center;
+    border-bottom: 2px solid #fff;
+}
+
+.features-section h2 {
+    font-size: 2.5em;
+    margin-bottom: 30px;
+}
+
+.features-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+    gap: 20px;
+}
+
+.feature {
+    background-color: #111;
+    padding: 20px;
+    border: 2px solid #fff;
+    text-align: left;
+    transition: transform 0.3s ease;
+}
+
+.feature:hover {
+    transform: scale(1.05);
+}
+
+.feature h3 {
+    font-size: 1.5em;
+    margin-bottom: 10px;
+}
+
+.feature p {
+    font-size: 1em;
+    color: #ccc;
+}
+
+/* Security section */
+.security-section {
+    padding: 50px 0;
+    text-align: center;
+    border-bottom: 2px solid #fff;
+}
+
+.security-section h2 {
+    font-size: 2.5em;
+    margin-bottom: 30px;
+}
+
+.security-section p {
+    margin-bottom: 20px;
+    font-size: 1.1em;
+}
+
+.virustotal-button {
+    margin-bottom: 20px;
+}
+
+.virustotal-button a {
+    padding: 10px 20px;
+    background-color: #fff;
+    color: #000;
+    text-decoration: none;
+    border: 2px solid #fff;
+    transition: all 0.3s ease;
+}
+
+.virustotal-button a:hover {
+    background-color: #000;
+    color: #fff;
+}
+
+/* Easter Egg */
+.easter-egg {
+    color: inherit; /* Keep it the same as the surrounding text */
+    cursor: pointer;
+}
+
+.easter-egg:hover {
+    color: #fff; /* On hover, make it stand out just a little */
+}
+
+/* Compatibility section */
+.compatibility-section {
+    padding: 50px 0;
+    text-align: center;
+    border-bottom: 2px solid #fff;
+}
+
+.compatibility-section h2 {
+    font-size: 2.5em;
+    margin-bottom: 30px;
+}
+
+.compatibility-section p {
+    font-size: 1.1em;
+    margin-bottom: 20px;
+}
+
+.compatibility-list {
+    list-style: none;
+    padding: 0;
+}
+
+.compatibility-list li {
+    margin: 10px 0;
+    font-size: 1.2em;
+}
+
+/* Donations section */
+.donation-section {
+    padding: 50px 0;
+    text-align: center;
+    border-bottom: 2px solid #fff;
+}
+
+.donation-section h2 {
+    font-size: 2.5em;
+    margin-bottom: 30px;
+}
+
+.donation-section p {
+    font-size: 1.1em;
+    margin-bottom: 0px;
+}
+
+#qrcode {
+    margin-top: 5px;
+}
+
+.bitcoin-container {
+    margin: 20px 0;
+    padding: 10px;
+    border: 2px solid #fff;
+    background-color: #111;
+    cursor: pointer;
+    display: inline-block;
+    text-align: center;
+    width: 220px; /* Match the QR code width */
+}
+
+#bitcoin-address {
+    font-size: 1.1em;  /* Adjusted size for balance */
+    word-break: break-all;
+    text-align: center;
+}
+
+#copy-message {
+    margin-top: 0px;
+    font-size: 0.9em;
+    color: gray;
+}
+
+/* Footer */
+footer {
+    background-color: #111;
+    text-align: center;
+    padding: 20px;
+}
+
+footer p {
+    font-size: 0.9em;
+    color: #ccc;
+}
+
+/* Responsive Styles */
+@media (max-width: 768px) {
+    header h1 {
+        font-size: 2.5em;
+    }
+
+    .about-section h2,
+    .download-section h2,
+    .features-section h2,
+    .security-section h2,
+    .compatibility-section h2,
+    .donation-section h2 {
+        font-size: 2em;
+    }
+
+    .features-grid {
+        grid-template-columns: 1fr;
+    }
+
+    .bitcoin-container {
+        width: auto;
+    }
+}
