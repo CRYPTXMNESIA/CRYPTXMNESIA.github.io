@@ -5,31 +5,7 @@
     <title>eepy - Lightweight Shutdown and Restart Tool</title>
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="styles.css">
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/qrious/4.0.2/qrious.min.js"></script>
     <script>
-        function copyBitcoinAddress() {
-            const address = document.getElementById('bitcoin-address').innerText;
-            navigator.clipboard.writeText(address).then(() => {
-                const copyMessage = document.getElementById('copy-message');
-                copyMessage.innerText = 'Copied to clipboard!';
-                setTimeout(() => {
-                    copyMessage.innerText = 'Click to copy address';
-                }, 2000);
-            });
-        }
-
-        function generateQRCode() {
-            const qr = new QRious({
-                element: document.getElementById('qrcode'),
-                value: document.getElementById('bitcoin-address').innerText,
-                size: 150,
-                background: '#111',
-                foreground: '#fff'
-            });
-        }
-
-        window.onload = generateQRCode;
-
         document.addEventListener('DOMContentLoaded', function() {
             document.querySelector('.easter-egg').addEventListener('click', function() {
                 window.open('https://www.youtube.com/watch?v=nTXQ6-35e7o', '_blank');
@@ -135,19 +111,7 @@
                     </ul>
                 </div>
             </section>
-
-            <section class="donation-section">
-                <div class="container">
-                    <h2>Support the Project</h2>
-                    <p>All donations will go directly into funding the domain, this website, certificates, research, advertisement, and charity. If you'd like to contribute, you can do so via Bitcoin:</p>
-                    <div class="bitcoin-container" onclick="copyBitcoinAddress()">
-                        <canvas id="qrcode"></canvas>
-                        <p id="bitcoin-address"><strong>bc1qeq2a4mfqse42nvyv5jf6eu7fr4yds4xrpdyp7r</strong></p>
-                    </div>
-                    <p id="copy-message" style="color: gray;">Click to copy address</p>
-                    <p>Every bit of support is appreciated—thank you so much!</p>
-                </div>
-            </section>
+            
         </main>
 
         <footer>
