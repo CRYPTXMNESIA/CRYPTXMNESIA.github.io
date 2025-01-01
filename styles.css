@@ -128,10 +128,6 @@ header .tagline {
     transition: transform 0.3s ease;
 }
 
-.feature:hover {
-    transform: scale(1.05);
-}
-
 .feature h3 {
     font-size: 1.5em;
     margin-bottom: 10px;
